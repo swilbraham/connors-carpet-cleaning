@@ -45,6 +45,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 body {
@@ -54,6 +55,7 @@ body {
     color: var(--teal-dark);
     background: var(--white);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 img {
@@ -157,14 +159,14 @@ ul {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(49, 64, 63, 0.95);
+    background: var(--white);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--gray-light);
     transition: all var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(49, 64, 63, 0.98);
+    background: var(--white);
     box-shadow: var(--shadow-lg);
 }
 
@@ -185,7 +187,6 @@ ul {
 .nav-logo-img {
     height: 55px;
     width: auto;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 
 .logo-text {
@@ -215,7 +216,7 @@ ul {
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--teal-dark);
     font-size: 14px;
     font-weight: 500;
     padding: 8px 14px;
@@ -225,8 +226,8 @@ ul {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--red);
+    background: rgba(49, 64, 63, 0.05);
 }
 
 .nav-cta-item {
@@ -246,7 +247,7 @@ ul {
 .nav-toggle span {
     width: 25px;
     height: 2px;
-    background: var(--white);
+    background: var(--teal-dark);
     border-radius: 2px;
     transition: all var(--transition);
 }
@@ -1169,13 +1170,14 @@ ul {
         top: 75px;
         left: 0;
         right: 0;
-        background: var(--teal-dark);
+        background: var(--white);
         flex-direction: column;
         padding: 20px;
         gap: 5px;
         transform: translateY(-120%);
         transition: transform 0.4s ease;
         box-shadow: var(--shadow-lg);
+        border-top: 1px solid var(--gray-light);
     }
 
     .nav-menu.active {
