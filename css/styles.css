@@ -185,6 +185,7 @@ ul {
 .nav-logo-img {
     height: 55px;
     width: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 
 .logo-text {
@@ -664,6 +665,92 @@ ul {
     border-color: var(--teal);
 }
 
+/* Booking Form inside Calculator */
+.booking-form-wrapper {
+    margin-top: 20px;
+    padding: 25px;
+    background: var(--off-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-light);
+}
+
+.booking-form-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.booking-form .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+}
+
+.booking-form .form-group input {
+    padding: 12px 14px;
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius);
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    color: var(--teal-dark);
+    transition: border-color var(--transition);
+    background: var(--white);
+    outline: none;
+    width: 100%;
+}
+
+.booking-form .form-group input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(229, 42, 39, 0.1);
+}
+
+.booking-form .form-group input::placeholder {
+    color: var(--gray);
+}
+
+.booking-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.booking-summary {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 15px 18px;
+    border: 1px solid var(--gray-light);
+}
+
+.booking-summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: var(--teal);
+}
+
+.booking-summary-row:not(:last-child) {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.booking-summary-total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--teal-dark);
+}
+
+.booking-summary-total span:last-child {
+    color: var(--red);
+}
+
 /* ============================================
    Areas
    ============================================ */
@@ -934,6 +1021,7 @@ ul {
 .footer-logo-img {
     height: 50px;
     width: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 
 .footer-brand p {

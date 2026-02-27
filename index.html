@@ -258,9 +258,56 @@
                     <div class="calculator-actions" id="calculatorActions" style="display:none;">
                         <a href="tel:07895200474" class="btn btn-primary btn-lg btn-block">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            Book Now: 07895 200 474
+                            Call Now: 07895 200 474
                         </a>
-                        <a href="#contact" class="btn btn-outline btn-lg btn-block">Request a Callback</a>
+                        <button type="button" class="btn btn-outline btn-lg btn-block" id="showBookingBtn">Request Booking</button>
+                    </div>
+
+                    <!-- Booking Form (hidden until Request Booking clicked) -->
+                    <div class="booking-form-wrapper" id="bookingFormWrapper" style="display:none;">
+                        <h4 class="booking-form-title">Request a Booking</h4>
+                        <form action="https://formsubmit.co/connorscarpetcleaning@gmail.com" method="POST" class="booking-form" id="bookingForm">
+                            <input type="hidden" name="_subject" value="New Booking Request from Website Calculator">
+                            <input type="hidden" name="_captcha" value="true">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="Rooms Selected" id="bookingRooms" value="">
+                            <input type="hidden" name="Estimated Price" id="bookingPrice" value="">
+
+                            <div class="form-group">
+                                <label for="booking-name">Full Name</label>
+                                <input type="text" id="booking-name" name="Name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="booking-postcode">Postcode</label>
+                                    <input type="text" id="booking-postcode" name="Postcode" placeholder="e.g. L1 1AA" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking-phone">Contact Number</label>
+                                    <input type="tel" id="booking-phone" name="Contact Number" placeholder="07xxx xxx xxx" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-email">Email Address</label>
+                                <input type="email" id="booking-email" name="Email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-date">Preferred Date of Clean</label>
+                                <input type="date" id="booking-date" name="Preferred Date" required>
+                            </div>
+                            <div class="booking-summary" id="bookingSummary">
+                                <div class="booking-summary-row">
+                                    <span>Rooms:</span>
+                                    <span id="bookingSummaryRooms">-</span>
+                                </div>
+                                <div class="booking-summary-row booking-summary-total">
+                                    <span>Total:</span>
+                                    <span id="bookingSummaryPrice">£0.00</span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit Booking Request</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -272,19 +319,9 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Areas <span>We Cover</span></h2>
-                <p class="section-subtitle">Proudly serving Liverpool, The Wirral and surrounding areas across Merseyside.</p>
+                <p class="section-subtitle">Proudly serving homes and businesses across Merseyside &amp; Cheshire.</p>
             </div>
             <div class="areas-content">
-                <div class="areas-map">
-                    <div class="area-badge area-main">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#E52A27"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        Liverpool
-                    </div>
-                    <div class="area-badge area-main">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#E52A27"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        The Wirral
-                    </div>
-                </div>
                 <div class="areas-grid">
                     <div class="area-group">
                         <h3>Liverpool</h3>
@@ -402,7 +439,7 @@
                             </div>
                             <div>
                                 <h4>Service Area</h4>
-                                <p>Liverpool, The Wirral &amp; Merseyside</p>
+                                <p>Merseyside &amp; Cheshire</p>
                             </div>
                         </div>
                     </div>
@@ -464,7 +501,7 @@
                     <div class="footer-logo">
                         <img src="images/logo.png" alt="Connor's Carpet Cleaning" class="footer-logo-img">
                     </div>
-                    <p>Professional carpet cleaning services across Liverpool, The Wirral and Merseyside. Trusted by hundreds of happy customers.</p>
+                    <p>Professional carpet cleaning services across Merseyside &amp; Cheshire. Trusted by hundreds of happy customers.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -489,7 +526,7 @@
                         </li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#E52A27"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            Liverpool, The Wirral &amp; Merseyside
+                            Merseyside &amp; Cheshire
                         </li>
                     </ul>
                 </div>
