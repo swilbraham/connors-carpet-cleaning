@@ -182,6 +182,11 @@ ul {
     text-decoration: none;
 }
 
+.nav-logo-img {
+    height: 55px;
+    width: auto;
+}
+
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -427,7 +432,7 @@ ul {
    ============================================ */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px;
 }
 
@@ -620,6 +625,27 @@ ul {
     font-size: 0.8rem;
     color: var(--teal-light);
     margin-top: 5px;
+}
+
+.calculator-commercial {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--teal);
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: rgba(229, 42, 39, 0.06);
+    border-radius: var(--radius);
+    border: 1px dashed rgba(229, 42, 39, 0.25);
+}
+
+.calculator-commercial a {
+    color: var(--red);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.calculator-commercial a:hover {
+    color: var(--red-dark);
 }
 
 .calculator-actions {
@@ -905,6 +931,11 @@ ul {
     margin-bottom: 15px;
 }
 
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+}
+
 .footer-brand p {
     font-size: 0.9rem;
     line-height: 1.7;
@@ -1026,12 +1057,6 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .services-grid .service-card:last-child {
-        grid-column: span 2;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
     .areas-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1129,11 +1154,6 @@ ul {
 
     .services-grid {
         grid-template-columns: 1fr;
-    }
-
-    .services-grid .service-card:last-child {
-        grid-column: span 1;
-        max-width: none;
     }
 
     .room-options {
