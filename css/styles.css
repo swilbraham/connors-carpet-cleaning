@@ -862,6 +862,7 @@ ul {
     grid-template-columns: 1fr 1.3fr;
     gap: 40px;
     align-items: start;
+    overflow: hidden;
 }
 
 .contact-card {
@@ -1161,6 +1162,27 @@ ul {
 
 /* Mobile */
 @media (max-width: 768px) {
+    /* Prevent grid children from overflowing */
+    .contact-info,
+    .contact-form-wrapper,
+    .contact-card,
+    .calculator-card,
+    .booking-form-wrapper {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .contact-item a,
+    .contact-item p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .btn {
+        white-space: normal;
+        word-break: break-word;
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -1276,7 +1298,8 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    .form-row {
+    .form-row,
+    .booking-form .form-row {
         grid-template-columns: 1fr;
     }
 
