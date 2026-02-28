@@ -154,6 +154,57 @@
     line-height: 1.5;
 }
 
+/* ---- Services List ---- */
+.landing-services {
+    padding: 50px 0;
+    background: var(--white);
+}
+
+.landing-services-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--teal-dark);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.landing-services-title span {
+    color: var(--red);
+}
+
+.landing-services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.landing-service-item {
+    text-align: center;
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-light);
+    transition: all var(--transition);
+}
+
+.landing-service-item:hover {
+    border-color: var(--red-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.landing-service-item h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+}
+
+.landing-service-item p {
+    font-size: 0.8rem;
+    color: var(--teal);
+    line-height: 1.5;
+}
+
 /* ---- Calculator overrides for landing ---- */
 .landing-page .calculator {
     padding: 70px 0;
@@ -306,6 +357,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .landing-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .landing-proof-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -365,6 +420,27 @@
     }
 
     .landing-feature p {
+        font-size: 0.75rem;
+    }
+
+    .landing-services {
+        padding: 35px 0;
+    }
+
+    .landing-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .landing-service-item {
+        padding: 18px 12px;
+    }
+
+    .landing-service-item h3 {
+        font-size: 0.85rem;
+    }
+
+    .landing-service-item p {
         font-size: 0.75rem;
     }
 

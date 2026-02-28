@@ -31,10 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // First room £60, each additional room £30
         var price = 60 + (Math.max(0, totalRooms - 1) * 30);
 
-        // Silent discount: if both stairs and hallway are selected, remove £30
+        // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £30
         var hasStairs = selectedRooms.indexOf('stairs') !== -1;
         var hasHallway = selectedRooms.indexOf('hallway') !== -1;
-        if (hasStairs && hasHallway) {
+        var hasLanding = selectedRooms.indexOf('landing') !== -1;
+        var stairAreaCount = (hasStairs ? 1 : 0) + (hasHallway ? 1 : 0) + (hasLanding ? 1 : 0);
+        if (stairAreaCount >= 2) {
             price -= 30;
         }
 
@@ -102,10 +104,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (totalRooms > 0) {
             price = 60 + (Math.max(0, totalRooms - 1) * 30);
-            // Silent discount: if both stairs and hallway are selected, remove £30
+            // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £30
             var hasStairs = selectedValues.indexOf('stairs') !== -1;
             var hasHallway = selectedValues.indexOf('hallway') !== -1;
-            if (hasStairs && hasHallway) {
+            var hasLanding = selectedValues.indexOf('landing') !== -1;
+            var stairAreaCount = (hasStairs ? 1 : 0) + (hasHallway ? 1 : 0) + (hasLanding ? 1 : 0);
+            if (stairAreaCount >= 2) {
                 price -= 30;
             }
             if (price < 60) {
