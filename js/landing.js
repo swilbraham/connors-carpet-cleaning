@@ -12,14 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function calculatePrice() {
         var selectedRooms = [];
-        var hasStairOption = false;
 
         checkboxes.forEach(function (cb) {
             if (cb.checked) {
                 selectedRooms.push(cb.value);
-                if (cb.dataset.stair === 'true') {
-                    hasStairOption = true;
-                }
             }
         });
 
@@ -35,8 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // First room £60, each additional room £30
         var price = 60 + (Math.max(0, totalRooms - 1) * 30);
 
-        // Silent discount: if any stair option is selected, remove £30
-        if (hasStairOption) {
+        // Silent discount: if both stairs and hallway are selected, remove £30
+        var hasStairs = selectedRooms.indexOf('stairs') !== -1;
+        var hasHallway = selectedRooms.indexOf('hallway') !== -1;
+        if (hasStairs && hasHallway) {
             price -= 30;
         }
 
@@ -90,14 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateBookingSummary() {
         var selectedLabels = [];
-        var hasStairOption = false;
+        var selectedValues = [];
 
         checkboxes.forEach(function (cb) {
             if (cb.checked) {
                 selectedLabels.push(cb.dataset.label || cb.value);
-                if (cb.dataset.stair === 'true') {
-                    hasStairOption = true;
-                }
+                selectedValues.push(cb.value);
             }
         });
 
@@ -106,7 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (totalRooms > 0) {
             price = 60 + (Math.max(0, totalRooms - 1) * 30);
-            if (hasStairOption) {
+            // Silent discount: if both stairs and hallway are selected, remove £30
+            var hasStairs = selectedValues.indexOf('stairs') !== -1;
+            var hasHallway = selectedValues.indexOf('hallway') !== -1;
+            if (hasStairs && hasHallway) {
                 price -= 30;
             }
             if (price < 60) {
