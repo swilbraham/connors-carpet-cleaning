@@ -93,21 +93,21 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // First room £60, each additional room £30
-        var price = 60 + (Math.max(0, totalRooms - 1) * 30);
+        // First room £50, each additional £20
+        var price = 50 + (Math.max(0, totalRooms - 1) * 20);
 
-        // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £30
+        // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £1
         var hasStairs = selectedRooms.indexOf('stairs') !== -1;
         var hasHallway = selectedRooms.indexOf('hallway') !== -1;
         var hasLanding = selectedRooms.indexOf('landing') !== -1;
         var stairAreaCount = (hasStairs ? 1 : 0) + (hasHallway ? 1 : 0) + (hasLanding ? 1 : 0);
         if (stairAreaCount >= 2) {
-            price -= 30;
+            price -= 1;
         }
 
-        // Ensure price never goes below £60
-        if (price < 60) {
-            price = 60;
+        // Ensure price never goes below £50
+        if (price < 50) {
+            price = 50;
         }
 
         totalPriceEl.textContent = '£' + price.toFixed(2);
@@ -168,17 +168,17 @@ document.addEventListener('DOMContentLoaded', function () {
         var price = 0;
 
         if (totalRooms > 0) {
-            price = 60 + (Math.max(0, totalRooms - 1) * 30);
-            // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £30
+            price = 50 + (Math.max(0, totalRooms - 1) * 20);
+            // Silent discount: if any two or more of stairs, hallway, landing are selected, remove £1
             var hasStairs = selectedValues.indexOf('stairs') !== -1;
             var hasHallway = selectedValues.indexOf('hallway') !== -1;
             var hasLanding = selectedValues.indexOf('landing') !== -1;
             var stairAreaCount = (hasStairs ? 1 : 0) + (hasHallway ? 1 : 0) + (hasLanding ? 1 : 0);
             if (stairAreaCount >= 2) {
-                price -= 30;
+                price -= 1;
             }
-            if (price < 60) {
-                price = 60;
+            if (price < 50) {
+                price = 50;
             }
         }
 
